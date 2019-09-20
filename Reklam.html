@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/general.css">
+    <script src="js/report.js"></script>
+    <link href="https://www.sahibinden.com/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css" rel="stylesheet"
+          type="text/css">
+    <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css">
+
+    <title>QA - Test Results Report</title>
+</head>
+<body>
+
+<div class="header">
+    <img id="sahibinden-logo"
+         src="https://is1-ssl.mzstatic.com/image/thumb/Purple115/v4/60/07/6c/60076c81-e1b2-bee6-d31d-41986061e243/AppIcon-1x_U007emarketing-85-220-0-5.png/246x0w.jpg"
+         width="48" height="48">
+    <div class="header-left">
+        <a href="index.html">Summary</a>
+        <a href="Bireysel.html">Bireysel</a>
+        <a href="Kurumsal.html">Kurumsal</a>
+        <a href="Finans.html">Finans</a>
+        <a href="Alisveris.html">Alışveriş</a>
+        <a href="Arama.html">Arama</a>
+        <a href="Ilan.html">İlan</a>
+        <a class="active" href="Reklam.html">Reklam</a>
+    </div>
+</div>
+
+<div id="test-result-table">
+    <table class="table table-striped table-bordered" id="test_result" style="width:100%">
+        <thead>
+        <tr>
+            <th>Küre</th>
+            <th>Status</th>
+            <th>Test Class Name</th>
+            <th>Test Method</th>
+            <th>Stack Trace</th>
+            <th>Tag Name</th>
+            <th>Display Name</th>
+            <th>Test Time</th>
+        </tr>
+        </thead>
+        <tfoot>
+        <tr>
+            <th>Kure</th>
+            <th>Status</th>
+            <th>TestClassName</th>
+            <th>TestMethod</th>
+            <th>StackTrace</th>
+            <th>TagName</th>
+            <th>DisplayName</th>
+            <th>TestTime</th>
+        </tr>
+        </tfoot>
+    </table>
+</div>
+<script type="text/javascript">
+    getDisabledKureColumnWithReport();
+    filterTable("Reklam")
+</script>
+</body>
+</html>
