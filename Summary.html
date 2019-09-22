@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/general.css">
+    <link rel="import" href="library.html">
+    <title>QA - Test Result Summary</title>
+    <link href="https://www.sahibinden.com/favicon.ico" rel="shortcut icon" type="image/x-icon">
+</head>
+<body>
+
+<div class="header">
+    <img id="sahibinden-logo"
+         src="https://is1-ssl.mzstatic.com/image/thumb/Purple115/v4/60/07/6c/60076c81-e1b2-bee6-d31d-41986061e243/AppIcon-1x_U007emarketing-85-220-0-5.png/246x0w.jpg"
+         width="48" height="48">
+    <div class="header-left">
+        <a class="active" href="Summary.html">Summary</a>
+        <a href="Bireysel.html">Bireysel</a>
+        <a href="Kurumsal.html">Kurumsal</a>
+        <a href="Finans.html">Finans</a>
+        <a href="Alisveris.html">Alışveriş</a>
+        <a href="Arama.html">Arama</a>
+        <a href="Ilan.html">İlan</a>
+        <a href="Reklam.html">Reklam</a>
+    </div>
+</div>
+
+<div class="grid-container">
+    <div class="grid-item grid-header">Total Executed Test</div>
+    <div class="grid-item grid-header">Passed</div>
+    <div class="grid-item grid-header">Failed</div>
+    <div class="grid-item grid-header">Disabled</div>
+    <div class="grid-item grid-header">Bireysel</div>
+    <div class="grid-item grid-header">Kurumsal</div>
+    <div class="grid-item grid-header">Finans</div>
+    <div class="grid-item grid-header">Alışveriş</div>
+    <div class="grid-item grid-header">Arama</div>
+    <div class="grid-item grid-header">İlan</div>
+    <div class="grid-item grid-header">Reklam</div>
+    <div class="grid-item" id="total-executed-test"><a></a></div>
+    <div class="grid-item" id="passed-test-count"><a></a></div>
+    <div class="grid-item" id="failed-test-count"><a></a></div>
+    <div class="grid-item" id="disabled-test-count"><a></a></div>
+    <div class="grid-item"><a></a></div>
+    <div class="grid-item"><a></a></div>
+    <div class="grid-item"><a></a></div>
+    <div class="grid-item"><a></a></div>
+    <div class="grid-item"><a></a></div>
+    <div class="grid-item"><a></a></div>
+    <div class="grid-item"><a></a></div>
+
+</div>
+
+<div id="test-result-table">
+    <table class="table table-striped table-bordered" id="test_result" style="width:100%">
+        <thead>
+        <tr>
+            <th>Küre</th>
+            <th>Status</th>
+            <th>Test Class Name</th>
+            <th>Test Method</th>
+            <th>Stack Trace</th>
+            <th>Tag Name</th>
+            <th>Display Name</th>
+            <th>Test Time</th>
+        </tr>
+        </thead>
+        <tfoot>
+        <tr>
+            <th>Kure</th>
+            <th>Status</th>
+            <th>TestClassName</th>
+            <th>TestMethod</th>
+            <th>StackTrace</th>
+            <th>TagName</th>
+            <th>DisplayName</th>
+            <th>TestTime</th>
+        </tr>
+        </tfoot>
+    </table>
+</div>
+
+<button id="write-test-list" class="button">Write Test List</button>
+<div id="events"></div>
+
+<script type="text/javascript">
+    getReport(true);
+    writeTestList();
+
+    let totalExecutedTest = 0;
+    let passedTestCount = 0;
+    let failedTestCount = 0;
+    let disabledTestCount = 0;
+
+    fetch("json/TestResults.json")
+        .then(response => response.json())
+        .then(data => {
+
+            totalExecutedTest = data.data.length;
+
+            data.data.forEach(each => {
+
+                switch (each.Status) {
+                    case "PASSED":
+                        passedTestCount += 1;
+                        break;
+                    case "FAILED":
+                        failedTestCount += 1;
+                        break;
+                    case "IGNORED":
+                        disabledTestCount += 1;
+                        break;
+
+                    default:
+                        throw new Error("Undefined Status Name : " + each.Status)
+                }
+            });
+
+            document.querySelector("#total-executed-test > a").textContent = totalExecutedTest;
+            document.querySelector("#passed-test-count > a").textContent = passedTestCount;
+            document.querySelector("#failed-test-count > a").textContent = failedTestCount;
+            document.querySelector("#disabled-test-count > a").textContent = disabledTestCount;
+        });
+
+</script>
+</body>
+</html>

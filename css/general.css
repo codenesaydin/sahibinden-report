@@ -13,8 +13,6 @@ body {
     padding: 10px 10px;
 }
 
-
-
 .header a {
     float: left;
     color: black;
@@ -62,4 +60,51 @@ body {
     padding-top: 30px;
     margin-left: 10px;
     margin-right: 10px;;
+}
+
+
+/* Grid Style */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.grid-item {
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    font-size: 20px;
+    text-align: center;
+    background-color: #f0f1f3;
+}
+
+.grid-header {
+    background-color: #f6ff22;
+}
+
+
+
+#events {
+    margin: 10px 10px 1em;
+    padding: 1em;
+    background-color: #f6f6f6;
+    border: 1px solid #999;
+    border-radius: 3px;
+    height: 300px;
+    overflow: auto;
+}
+
+.button {
+    background-color: #4CAF50;
+    margin-left: 10px;
+    margin-top: 20px;
+    border: none;
+    color: white;
+    padding: 13px 13px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
 }

@@ -3,7 +3,10 @@
 
 <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/general.css">
     <link rel="import" href="library.html">
+    <title>QA - Test Result - İlan</title>
+    <link href="https://www.sahibinden.com/favicon.ico" rel="shortcut icon" type="image/x-icon">
 </head>
 <body>
 
@@ -12,7 +15,7 @@
          src="https://is1-ssl.mzstatic.com/image/thumb/Purple115/v4/60/07/6c/60076c81-e1b2-bee6-d31d-41986061e243/AppIcon-1x_U007emarketing-85-220-0-5.png/246x0w.jpg"
          width="48" height="48">
     <div class="header-left">
-        <a href="index.html">Summary</a>
+        <a href="Summary.html">Summary</a>
         <a href="Bireysel.html">Bireysel</a>
         <a href="Kurumsal.html">Kurumsal</a>
         <a href="Finans.html">Finans</a>
@@ -51,9 +54,14 @@
         </tfoot>
     </table>
 </div>
+
+<button id="write-test-list" class="button">Write Test List</button>
+<div id="events"></div>
+
 <script type="text/javascript">
     getDisabledKureColumnWithReport();
-    filterTable("Ilan")
+    filterTable("Ilan");
+    writeTestList();
 </script>
 </body>
 </html>
