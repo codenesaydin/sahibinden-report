@@ -8,3 +8,9 @@ let Kure = {
     REKLAM: "Reklam"
 };
 
+let testStatus = {
+    PASSED: "PASSED",
+    FAILED: "FAILED",
+    IGNORED: "IGNORED"
+};
+

@@ -87,42 +87,7 @@
 <script type="text/javascript">
     getReport(true);
     writeTestList();
-
-    let totalExecutedTest = 0;
-    let passedTestCount = 0;
-    let failedTestCount = 0;
-    let disabledTestCount = 0;
-
-    fetch("json/TestResults.json")
-        .then(response => response.json())
-        .then(data => {
-
-            totalExecutedTest = data.data.length;
-
-            data.data.forEach(each => {
-
-                switch (each.Status) {
-                    case "PASSED":
-                        passedTestCount += 1;
-                        break;
-                    case "FAILED":
-                        failedTestCount += 1;
-                        break;
-                    case "IGNORED":
-                        disabledTestCount += 1;
-                        break;
-
-                    default:
-                        throw new Error("Undefined Status Name : " + each.Status)
-                }
-            });
-
-            document.querySelector("#total-executed-test > a").textContent = totalExecutedTest;
-            document.querySelector("#passed-test-count > a").textContent = passedTestCount;
-            document.querySelector("#failed-test-count > a").textContent = failedTestCount;
-            document.querySelector("#disabled-test-count > a").textContent = disabledTestCount;
-        });
-
+    setReportInfo();
 </script>
 </body>
 </html>

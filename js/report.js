@@ -1,6 +1,8 @@
+let resourceJsonPath = "json/TestResults.json";
+
 function getReport(isKureColumnView) {
     $('#test_result').DataTable({
-            "ajax": "json/TestResults.json",
+            "ajax": resourceJsonPath,
             "columns": [
                 {"data": "Kure"},
                 {"data": "Status"},
@@ -22,7 +24,7 @@ function getReport(isKureColumnView) {
     );
 }
 
-function getDisabledKureColumnWithReport() {
+function createDisabledKureColumnWithReport() {
     getReport(false);
 }
 
@@ -49,6 +51,43 @@ function writeTestList() {
 
             document.getElementById("events").appendChild(node);
         });
-
     });
+}
+
+function setReportInfo() {
+
+    let totalExecutedTest = 0;
+    let passedTestCount = 0;
+    let failedTestCount = 0;
+    let disabledTestCount = 0;
+
+    fetch(resourceJsonPath)
+        .then(response => response.json())
+        .then(data => {
+
+            totalExecutedTest = data.data.length;
+
+            data.data.forEach(each => {
+
+                switch (each.Status) {
+                    case testStatus.PASSED:
+                        passedTestCount += 1;
+                        break;
+                    case testStatus.FAILED:
+                        failedTestCount += 1;
+                        break;
+                    case testStatus.IGNORED:
+                        disabledTestCount += 1;
+                        break;
+
+                    default:
+                        throw new Error("Undefined Status : " + each.Status)
+                }
+            });
+
+            document.querySelector("#total-executed-test > a").textContent = totalExecutedTest;
+            document.querySelector("#passed-test-count > a").textContent = passedTestCount;
+            document.querySelector("#failed-test-count > a").textContent = failedTestCount;
+            document.querySelector("#disabled-test-count > a").textContent = disabledTestCount;
+        });
 }
