@@ -80,7 +80,8 @@ body {
 }
 
 .grid-header {
-    background-color: #f6ff22;
+    background-color: rgba(63, 71, 95, 0.91);
+    color: #f0f8ff;
 }
 
 
