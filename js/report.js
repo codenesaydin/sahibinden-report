@@ -20,6 +20,8 @@ function getReport(isKureColumnView) {
                 }
             ],
             select: true,
+            "deferRender": true
+
         }
     );
 }
