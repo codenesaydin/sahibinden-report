@@ -9,13 +9,12 @@ body {
 
 .header {
     overflow: hidden;
-    background-color: #3f475f;
+    background-color: #3490b3;
     padding: 10px 10px;
 }
 
 .header a {
     float: left;
-    color: black;
     text-align: center;
     padding: 12px;
     text-decoration: none;
@@ -36,8 +35,9 @@ body {
 }
 
 .header a.active {
-    background-color: dodgerblue;
+    background-color: #354f75;
     color: white;
+    border-color: #007bff;
 }
 
 .header-right {
@@ -80,10 +80,9 @@ body {
 }
 
 .grid-header {
-    background-color: rgba(63, 71, 95, 0.91);
+    background-color: #38a7d2;
     color: #f0f8ff;
 }
-
 
 
 #events {
