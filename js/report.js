@@ -166,17 +166,30 @@ function setReportInfo() {
                 }
             });
 
-            document.querySelector("#total-executed-test > a").textContent = totalExecutedTest;
+            //document.querySelector("#total-executed-test > a").textContent = totalExecutedTest;
             document.querySelector("#passed-test-count > a").textContent = passedTestCount;
             document.querySelector("#failed-test-count > a").textContent = failedTestCount;
-            document.querySelector("#disabled-test-count > a").textContent = disabledTestCount;
+            //document.querySelector("#disabled-test-count > a").textContent = disabledTestCount;
 
-            document.querySelector("#bireysel > a").textContent = bireyselPassedTest + "/" + bireyselFailedTest;
-            document.querySelector("#kurumsal > a").textContent = kurumsalPassedCount + "/" + kurumsalFailedCount;
-            document.querySelector("#finans > a").textContent = finansPassedCount + "/" + finansFailedCount;
-            document.querySelector("#alisveris > a").textContent = alisverisPassedCount + "/" + alisverisFailedCount;
-            document.querySelector("#arama > a").textContent = aramaPassedCount + "/" + aramaFailedCount;
-            document.querySelector("#ilan > a").textContent = ilanPassedCount + "/" + ilanFailedCount;
-            document.querySelector("#reklam > a").textContent = reklamPassedCount + "/" + reklamFailedCount;
+            document.querySelector("#bireysel-passed > a").textContent = bireyselPassedTest;
+            document.querySelector("#bireysel-failed > a").textContent = bireyselFailedTest;
+
+            document.querySelector("#kurumsal-passed > a").textContent = kurumsalPassedCount;
+            document.querySelector("#kurumsal-failed > a").textContent = kurumsalFailedCount;
+
+            document.querySelector("#finans-passed > a").textContent = finansPassedCount;
+            document.querySelector("#finans-failed > a").textContent = finansFailedCount;
+
+            document.querySelector("#alisveris-passed > a").textContent = alisverisPassedCount;
+            document.querySelector("#alisveris-failed > a").textContent = alisverisFailedCount;
+
+            document.querySelector("#arama-passed > a").textContent = aramaPassedCount;
+            document.querySelector("#arama-failed > a").textContent = aramaFailedCount;
+
+            document.querySelector("#ilan-passed > a").textContent = ilanPassedCount;
+            document.querySelector("#ilan-failed > a").textContent = ilanFailedCount;
+
+            document.querySelector("#reklam-passed > a").textContent = reklamPassedCount;
+            document.querySelector("#reklam-failed > a").textContent = reklamFailedCount;
         });
 }

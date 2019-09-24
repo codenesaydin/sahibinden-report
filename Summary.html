@@ -26,31 +26,71 @@
     </div>
 </div>
 
-<div class="grid-container">
-    <div class="grid-item grid-header">Total Executed Test</div>
-    <div class="grid-item grid-header">Passed</div>
-    <div class="grid-item grid-header">Failed</div>
-    <div class="grid-item grid-header">Disabled</div>
-    <div class="grid-item grid-header">Bireysel</div>
-    <div class="grid-item grid-header">Kurumsal</div>
-    <div class="grid-item grid-header">Finans</div>
-    <div class="grid-item grid-header">Alışveriş</div>
-    <div class="grid-item grid-header">Arama</div>
-    <div class="grid-item grid-header">İlan</div>
-    <div class="grid-item grid-header">Reklam</div>
-    <div class="grid-item" id="total-executed-test"><a></a></div>
-    <div class="grid-item" id="passed-test-count"><a></a></div>
-    <div class="grid-item" id="failed-test-count"><a></a></div>
-    <div class="grid-item" id="disabled-test-count"><a></a></div>
-    <div class="grid-item" id="bireysel"><a></a></div>
-    <div class="grid-item" id="kurumsal"><a></a></div>
-    <div class="grid-item" id="finans"><a></a></div>
-    <div class="grid-item" id="alisveris"><a></a></div>
-    <div class="grid-item" id="arama"><a></a></div>
-    <div class="grid-item" id="ilan"><a></a></div>
-    <div class="grid-item" id="reklam"><a></a></div>
+<hr>
 
+
+<div id="test-result-info">
+    <table id="result">
+        <tr>
+            <th id="result-küre">Küre</th>
+            <th id="result-passed">Passed ✓</th>
+            <th id="result-failed">Failed ✖</th>
+            <th id="result-disabled">Ignored !</th>
+        </tr>
+        <tr>
+            <td><a>Bireysel</a></td>
+            <td id="bireysel-passed"><a></a></td>
+            <td id="bireysel-failed"><a></a></td>
+            <td id="bireysel-disabled"><a></a></td>
+        </tr>
+        <tr>
+            <td><a></a>Kurumsal</td>
+            <td id="kurumsal-passed"><a></a></td>
+            <td id="kurumsal-failed"><a></a></td>
+            <td id="kurumsal-disabled"><a></a></td>
+        </tr>
+        <tr>
+            <td><a></a>Finans</td>
+            <td id="finans-passed"><a></a></td>
+            <td id="finans-failed"><a></a></td>
+            <td id="finans-disabled"><a></a></td>
+        </tr>
+        <tr>
+            <td><a></a>Alışveriş</td>
+            <td id="alisveris-passed"><a></a></td>
+            <td id="alisveris-failed"><a></a></td>
+            <td id="alisveris-disabled"><a></a></td>
+        </tr>
+
+        <tr>
+            <td><a></a>Arama</td>
+            <td id="arama-passed"><a></a></td>
+            <td id="arama-failed"><a></a></td>
+            <td id="arama-disabled"><a></a></td>
+        </tr>
+        <tr>
+            <td><a></a>İlan</td>
+            <td id="ilan-passed"><a></a></td>
+            <td id="ilan-failed"><a></a></td>
+            <td id="ilan-disabled"><a></a></td>
+        </tr>
+        <tr>
+            <td><a></a>Reklam</td>
+            <td id="reklam-passed"><a></a></td>
+            <td id="reklam-failed"><a></a></td>
+            <td id="reklam-disabled"><a></a></td>
+        </tr>
+        <tr>
+            <td style="font-weight:bold"><a></a>Total</td>
+            <td style="font-weight:bold" id="passed-test-count"><a></a></td>
+            <td style="font-weight:bold" id="failed-test-count"><a></a></td>
+            <td style="font-weight:bold" id="disabled-test-count"><a></a></td>
+        </tr>
+
+    </table>
 </div>
+
+<hr>
 
 <div id="test-result-table">
     <table class="table table-striped table-bordered" id="test_result" style="width:100%">
@@ -81,8 +121,11 @@
     </table>
 </div>
 
+
 <button id="write-test-list" class="button">Write Test List</button>
 <div id="events"></div>
+
+<hr>
 
 <script type="text/javascript">
     getReport(true);
