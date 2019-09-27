@@ -16,6 +16,7 @@
          width="48" height="48">
     <div class="header-left">
         <a class="active" href="Summary.html">Summary</a>
+        <a href="Non-Running-Tests.html">Non-Running Tests</a>
         <a href="Bireysel.html">Bireysel</a>
         <a href="Kurumsal.html">Kurumsal</a>
         <a href="Finans.html">Finans</a>
@@ -26,6 +27,12 @@
     </div>
 </div>
 
+<hr>
+<div class="container">
+    <div class="page-header">
+        <h1>Summary</h1>
+    </div>
+</div>
 <hr>
 
 
@@ -121,14 +128,12 @@
     </table>
 </div>
 
-
-<button id="write-test-list" class="button">Write Test List</button>
 <div id="events"></div>
 
 <hr>
 
 <script type="text/javascript">
-    getReport(true);
+    getTestResultReport(true);
     writeTestList();
     setReportInfo();
 </script>

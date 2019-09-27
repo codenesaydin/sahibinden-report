@@ -1,6 +1,6 @@
 let resourceJsonPath = "json/TestResults.json";
 
-function getReport(isKureColumnView) {
+function getTestResultReport(isKureColumnView) {
     $('#test_result').DataTable({
             "ajax": resourceJsonPath,
             "columns": [
@@ -19,15 +19,52 @@ function getReport(isKureColumnView) {
                     "visible": isKureColumnView,
                 }
             ],
+            dom: 'Blfrtip',
             select: true,
-            "deferRender": true
+            "deferRender": true,
+            buttons: [
+                'selectAll',
+                {
+                    text: 'Write Test List'
+                }
+            ],
+            language: {
+                buttons: {
+                    selectAll: "Select All Items",
+                }
+            }
+        }
+    );
+}
 
+function getNonRunningTests() {
+    $('#test_result').DataTable({
+            "ajax": "json/Non-running-tests.json",
+            "columns": [
+                {"data": "Kure"},
+                {"data": "TestClassName"},
+                {"data": "TestMethod"}
+            ],
+            dom: 'Blfrtip',
+            select: true,
+            "deferRender": true,
+            buttons: [
+                'selectAll',
+                {
+                    text: 'Write Test List'
+                }
+            ],
+            language: {
+                buttons: {
+                    selectAll: "Select All Items",
+                }
+            }
         }
     );
 }
 
 function createDisabledKureColumnWithReport() {
-    getReport(false);
+    getTestResultReport(false);
 }
 
 function filterTable(kure) {
@@ -40,7 +77,7 @@ function filterTable(kure) {
 }
 
 function writeTestList() {
-    $('#write-test-list').click(function () {
+    $("[class='dt-button']").click(function () {
 
         var selectedItems = $('#test_result').DataTable();
 
@@ -52,6 +89,10 @@ function writeTestList() {
             node.appendChild(textnode);
 
             document.getElementById("events").appendChild(node);
+        });
+
+        document.querySelector("[class='dt-button']").scrollIntoView({
+            behavior: 'smooth'
         });
     });
 }

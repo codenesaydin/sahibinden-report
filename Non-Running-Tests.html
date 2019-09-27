@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="css/general.css">
     <link rel="import" href="library.html">
-    <title>QA - Test Result - Bireysel</title>
+    <title>QA - Test Result - Reklam</title>
     <link href="https://www.sahibinden.com/favicon.ico" rel="shortcut icon" type="image/x-icon">
 </head>
 <body>
@@ -16,8 +16,8 @@
          width="48" height="48">
     <div class="header-left">
         <a href="Summary.html">Summary</a>
-        <a href="Non-Running-Tests.html">Non-Running Tests</a>
-        <a class="active" href="Bireysel.html">Bireysel</a>
+        <a class="active" href="Non-Running-Tests.html">Non-Running Tests</a>
+        <a href="Bireysel.html">Bireysel</a>
         <a href="Kurumsal.html">Kurumsal</a>
         <a href="Finans.html">Finans</a>
         <a href="Alisveris.html">Alışveriş</a>
@@ -28,11 +28,13 @@
 </div>
 
 <hr>
+
 <div class="container">
     <div class="page-header">
-        <h1>Bireysel</h1>
+        <h1>Non-Running Test List</h1>
     </div>
 </div>
+
 <hr>
 
 <div id="test-result-table">
@@ -40,35 +42,26 @@
         <thead>
         <tr>
             <th>Küre</th>
-            <th>Status</th>
             <th>Test Class Name</th>
             <th>Test Method</th>
-            <th>Stack Trace</th>
-            <th>Tag Name</th>
-            <th>Display Name</th>
-            <th>Test Time</th>
         </tr>
         </thead>
         <tfoot>
         <tr>
             <th>Kure</th>
-            <th>Status</th>
             <th>TestClassName</th>
             <th>TestMethod</th>
-            <th>StackTrace</th>
-            <th>TagName</th>
-            <th>DisplayName</th>
-            <th>TestTime</th>
         </tr>
         </tfoot>
     </table>
 </div>
 
+<hr>
+
 <div id="events"></div>
 
 <script type="text/javascript">
-    createDisabledKureColumnWithReport();
-    filterTable("Bireysel");
+    getNonRunningTests();
     writeTestList();
 </script>
 </body>
