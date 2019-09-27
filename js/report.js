@@ -32,7 +32,9 @@ function getTestResultReport(isKureColumnView) {
                 buttons: {
                     selectAll: "Select All Items",
                 }
-            }
+            },
+            "aLengthMenu": [[25, 50, 75, -1], [25, 50, 75, "All"]],
+            "iDisplayLength": 25
         }
     );
 }
@@ -58,7 +60,9 @@ function getNonRunningTests() {
                 buttons: {
                     selectAll: "Select All Items",
                 }
-            }
+            },
+            "aLengthMenu": [[25, 50, 75, -1], [25, 50, 75, "All"]],
+            "iDisplayLength": 25
         }
     );
 }
