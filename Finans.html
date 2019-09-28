@@ -4,6 +4,8 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="css/general.css">
+    <link rel="stylesheet" type="text/css" href="css/datatable.css">
+    <link rel="stylesheet" type="text/css" href="css/page-up.css">
     <link rel="import" href="library.html">
     <title>QA - Test Result - Finans</title>
     <link href="https://www.sahibinden.com/favicon.ico" rel="shortcut icon" type="image/x-icon">
@@ -66,10 +68,13 @@
 
 <div id="events"></div>
 
+<a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a>
+
 <script type="text/javascript">
     createDisabledKureColumnWithReport();
     filterTable("Finans");
     writeTestList();
+    topScroll();
 </script>
 </body>
 </html>
