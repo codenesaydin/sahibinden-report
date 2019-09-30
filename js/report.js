@@ -1,4 +1,5 @@
 let resourceJsonPath = "json/TestResults.json";
+let nonRunningTestJsonPath = "json/Non-running-tests.json";
 
 function getTestResultReport(isKureColumnView) {
     $('#test_result').DataTable({
@@ -34,14 +35,15 @@ function getTestResultReport(isKureColumnView) {
                 }
             },
             "aLengthMenu": [[25, 50, 75, -1], [25, 50, 75, "All"]],
-            "iDisplayLength": 25
+            "iDisplayLength": 25,
+            responsive: true
         }
     );
 }
 
 function getNonRunningTests() {
     $('#test_result').DataTable({
-            "ajax": "json/Non-running-tests.json",
+            "ajax": nonRunningTestJsonPath,
             "columns": [
                 {"data": "Kure"},
                 {"data": "TestClassName"},
@@ -62,7 +64,8 @@ function getNonRunningTests() {
                 }
             },
             "aLengthMenu": [[25, 50, 75, -1], [25, 50, 75, "All"]],
-            "iDisplayLength": 25
+            "iDisplayLength": 25,
+            responsive: true
         }
     );
 }
@@ -101,7 +104,7 @@ function writeTestList() {
     });
 }
 
-function setReportInfo() {
+function getSummaryReportInfo() {
 
     let totalExecutedTest = 0;
     let passedTestCount = 0;
@@ -236,6 +239,33 @@ function setReportInfo() {
 
             document.querySelector("#reklam-passed > a").textContent = reklamPassedCount;
             document.querySelector("#reklam-failed > a").textContent = reklamFailedCount;
+        });
+}
+
+function getKureReportInfo(kureName) {
+
+    let passedTestCount = 0;
+    let failedTestCount = 0;
+    let disabledTestCount = 0;
+
+    fetch(resourceJsonPath)
+        .then(response => response.json())
+        .then(data => {
+
+            data.data.forEach(each => {
+
+                if (each.Kure === kureName) {
+                    if (each.Status === testStatus.PASSED) {
+                        passedTestCount += 1;
+                    } else if (each.Status === testStatus.FAILED) {
+                        failedTestCount += 1;
+                    }
+                }
+            });
+
+            document.querySelector("#passed > a").textContent = passedTestCount;
+            document.querySelector("#failed > a").textContent = failedTestCount;
+            //document.querySelector("#disabled > a").textContent = disabledTestCount;
         });
 }
 

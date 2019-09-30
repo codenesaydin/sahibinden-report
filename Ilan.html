@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="css/general.css">
     <link rel="stylesheet" type="text/css" href="css/datatable.css">
+    <link rel="stylesheet" type="text/css" href="css/summary-table.css">
     <link rel="stylesheet" type="text/css" href="css/page-up.css">
     <link rel="import" href="library.html">
     <title>QA - Test Result - İlan</title>
@@ -35,6 +36,23 @@
         <h1>İlan</h1>
     </div>
 </div>
+<hr>
+
+<div id="test-result-info">
+    <table id="result">
+        <tr>
+            <th id="result-passed">Passed ✓</th>
+            <th id="result-failed">Failed ✖</th>
+            <th id="result-disabled">Ignored !</th>
+        </tr>
+        <tr>
+            <td style="font-weight:bold" id="passed"><a></a></td>
+            <td style="font-weight:bold" id="failed"><a></a></td>
+            <td style="font-weight:bold" id="disabled"><a></a></td>
+        </tr>
+    </table>
+</div>
+
 <hr>
 
 <div id="test-result-table">
@@ -72,7 +90,8 @@
 
 <script type="text/javascript">
     createDisabledKureColumnWithReport();
-    filterTable("Ilan");
+    getKureReportInfo(Kure.ILAN);
+    filterTable(Kure.ILAN);
     writeTestList();
     topScroll();
 </script>
