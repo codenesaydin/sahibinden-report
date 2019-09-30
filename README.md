@@ -2,4 +2,4 @@
 
 Sahibinden Test Automation Report Images
 
-![1](https://photos.google.com/share/AF1QipM2f2dI2RKkRdHFEskqqN-yHQ0i4zVTalYROSOlJ0g4jOZjy6jHiuZQ14nA1wwQug?key=ZHVObjdDdzVVclNxUUg3cHp6N3BEN3lhc0tpZENR)
+![1](https://drive.google.com/file/d/1h0L2VdDpPfoErkT7FT0Z7uOFtrJOKDQH/view?usp=sharing)
